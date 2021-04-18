@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>8th sem</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="http://www.w3schools.com/lib/w3.css">
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="cgpa.css">
+	<style type="text/css">
+		h1{
+			font-size: 2rem;
+		}
+	</style>
+
+</head>
+<body>
+	<h2>Select Your Grades...</h2>
+	<p id="apdna">Project Work(FD8811)</p>
+	<select name="e-grade" id="e" required>
+		<option value="o">O</option>
+		<option value="a+">A+</option>
+		<option value="a">A</option>
+		<option value="b+">B+</option>
+		<option value="b">B</option>
+		<option value="ra">RA</option>
+		<option value="ra">SA</option>
+		<option value="ra">W</option>
+	</select>
+
+	<br><br>
+	
+	<a href="#r"><button onclick="myfunction()" id="sub">Submit</button></a> 
+	<h1 id="re"></h1>
+	<p id="result"></p>
+	<p id="r"></p>
+	<script type="text/javascript">
+		function myfunction(){
+		var s1="";
+		var t,gpa;
+		s1=document.getElementById("e").value;
+		switch(s1){
+			case "o":
+			s1=10;
+			break;
+			case "a+":
+			s1=9;
+			break;
+			case "a":
+			s1=8;
+			break;
+			case "b+":
+			s1=7;
+			break;
+			case "b":
+			s1=6;
+			break;
+			case "ra":
+			s1=0;
+			break;
+			default:
+			document.getElementById("result").innerHTML="invalid grade";
+			break;
+		}
+		s1*=10;
+		t=s1/10;
+		gpa=t.toFixed(2);
+		document.getElementById("result").innerHTML="your gpa is:"+gpa;
+		if((gpa<6.00)|| s1<6 )
+		{
+			document.getElementById("re").innerHTML="☺️";
+			document.getElementById("r").innerHTML="Failure is simply the opportunity to begin again. This time more intelligently....😇";
+		}
+		else if ((gpa>=7.00) && (gpa<8.00)) {
+			document.getElementById("re").innerHTML="😇";
+			document.getElementById("r").innerHTML="“Push yourself to do more. Work hard, train hard, and be the best that you can be";
+		}
+		else if ((gpa>=8.00) && (gpa<9.00)) {
+			document.getElementById("re").innerHTML="🤩";
+			document.getElementById("r").innerHTML="Success is not final, failure is not fatal; it is the courage to continue that counts";
+		}
+		else {
+			document.getElementById("re").innerHTML="🥳";
+			document.getElementById("r").innerHTML="YOUR TODAY’S SUCCESS IS THE BEGINNING OF TOMORROW’S ACHIEVEMENT. CONGRATULATIONS!";
+		}
+
+	}
+	</script>
+		
+</body>
+</html>
